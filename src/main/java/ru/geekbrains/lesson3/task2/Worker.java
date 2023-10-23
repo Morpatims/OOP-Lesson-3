@@ -1,14 +1,9 @@
 package ru.geekbrains.lesson3.task2;
 
-/**
- * Рабочий (работает с 9 до 18,
- * получает фиксированную заработную плату)
- */
 public class Worker extends Employee {
 
-
-    public Worker(String surName, String name, double salary) {
-        super(surName, name, salary);
+    public Worker(String surName, String name, double salary, int age) {
+        super(surName, name, salary, age);
     }
 
     @Override

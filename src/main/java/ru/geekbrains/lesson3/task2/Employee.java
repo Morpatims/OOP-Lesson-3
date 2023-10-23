@@ -1,49 +1,26 @@
 package ru.geekbrains.lesson3.task2;
 
-/**
- * Рабочий (базовый тип)
- */
-public abstract class Employee implements Comparable<Employee>{
+import java.util.*;
 
-    @Override
-    public int compareTo(Employee o) {
-        int surNameRes = surName.compareTo(o.surName);
-        if (surNameRes == 0){
-            return name.compareTo(o.name);
-        }
-        return surNameRes;
-    }
+public abstract class Employee implements Comparable<Employee> {
 
-    public Employee(String surName, String name, double salary) {
+    protected String name;
+    protected String surName;
+    protected double salary;
+    protected int age;
+
+    public Employee(String surName, String name, double salary, int age) {
         this.name = name;
         this.surName = surName;
         this.salary = salary;
+        this.age = age;
     }
 
-    /**
-     * Имя
-     */
-    protected String name;
-
-    /**
-     * Фамилия
-     */
-    protected String surName;
-
-    /**
-     * Ставка заработной платы
-     */
-    protected double salary;
-
-    /**
-     * Расчет среднемесячной заработной платы
-     * @return заработная плата в месяц
-     */
     public abstract double calculateSalary();
 
     @Override
     public String toString() {
-        return String.format("%s %s; ставка: %.2f руб.; заработная плата: %.2f руб.",
-                surName, name, salary, calculateSalary());
+        return String.format("%s %s; ставка: %.2f руб.; возраст: %d; заработная плата: %.2f руб.",
+                surName, name, salary, age, calculateSalary());
     }
 }

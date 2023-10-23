@@ -5,22 +5,18 @@ import java.util.Arrays;
 public class Program {
 
     public static void main(String[] args) {
+        Employee[] employees = EmployeeFabric.generateEmployees(15);
 
-        Worker[] workers = EmployeeFabric.generateEmployees(15);
-        for (Worker worker : workers) {
-            System.out.println(worker);
+        System.out.println("Неотсортированный список сотрудников:");
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
 
-        System.out.println();
-        System.out.println("***");
-        System.out.println();
+        Arrays.sort(employees, new AgeComparator());
 
-        Arrays.sort(workers, new SalaryComparator());
-
-        for (Worker worker : workers) {
-            System.out.println(worker);
+        System.out.println("Список сотрудников, отсортированный по возрасту:");
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
-
     }
-
 }
