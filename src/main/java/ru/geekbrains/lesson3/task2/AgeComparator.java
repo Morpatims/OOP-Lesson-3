@@ -1,3 +1,5 @@
+package ru.geekbrains.lesson3.task2;
+
 public class AgeComparator implements Comparator<Employee> {
 
     @Override

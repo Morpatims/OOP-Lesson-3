@@ -10,7 +10,7 @@ public class EmployeeFabric {
 
         int salary = random.nextInt(60000, 120001);
         double hourlyRate = 100 + random.nextDouble() * 200;
-        int randomAge = random.nextInt(20, 60); // Генерация случайного возраста от 20 до 59 лет
+        int randomAge = random.nextInt(20, 60);
 
         int randomType = random.nextInt(2);
 
